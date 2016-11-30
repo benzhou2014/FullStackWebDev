@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Dating web site</title>
+    </head>
+
+    <body>
+        <p>
+            <h3>Please Enter Your Details For Our Dating Website!</h33>
+        </p>
+        <Form method="post" enctype="multipart/form-data" action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+            <div>
+                <fieldset>
+                    <legend>Your Face</legend>
+                    <label for="imgUpload">Your images:
+                    </label>
+                    <input type="file" accept="image/*" onchange="loadFile(event)"><br>
+                    <label for="preview">Image preview:</label>
+                    <img id="output"/>
+                    <script>
+                        var loadFile = function (event) {
+                            var output = document.getElementById('output');
+                            output.width = "300"
+                            output.height = "200"
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
+                </fieldset><br>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Your General Details</legend>
+                    <label for="name">Name:
+                    </label>
+                    <input type="textbox" id="name" name="name" placeholder="Your full name" required>
+                    <br>
+                    <label for="gender">Gender:
+                    </label>
+                    <input type="radio" id="gender" name="gender" value="male" required>Male
+                    <input type="radio" id="gender" name="gender" value="female" required>Female
+                    <br>
+                    <label for="age">Age:
+                    </label>
+                    <input type="number" id="age" name="age" value="18" required>
+                    <br>
+                    <label for="bDate">Date of birth:
+                    </label>
+                    <input type="date" id="bDate" name="bDate">
+                    <script>
+                        document.getElementById('bDate').value = new Date().toDateInputValue();
+                    </script>
+                    <br>
+                    <label for="favcolor">Favorite color:
+                    </label>
+                    <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                    <br>
+                    <label for="whichCountry">Which country:
+                    </label>
+                    <select id="whichCountry" name="whichCountry">
+                        <option value="noSelection"></option>
+                        <option value="Canada">Canada</option>
+                        <option value="China">China</option>
+                        <option value="USA">USA</option>
+                        <option value="Russia">Russia</option>
+                        <option value="UK">UK</option>
+                    </select>
+                </fieldset><br>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Your Indicators</legend>
+                    <label for="height">Height:
+                    </label>
+                    <label>Short</label>
+                    <input type="range" id="height" name="height" min="0" max="100" width="3">
+                    <label>Tall</label>
+                    <br>
+                    <label for="salary">Salary:
+                    </label>
+                    <label>Poor</label>
+                    <input type="range" id="salary" name="salary" min="0" max="100" width="3">
+                    <label>Rich</label>
+                </fieldset><br>
+            </div>
+            <div>
+                <fieldset>
+
+                    <legend>Your Contact Information</legend>
+                    <label for="email">Email:
+                    </label>
+                    <input type="email" id="email" required>
+                    <br>
+                    <label for="telephone">Mobile:
+                    </label>
+                    <input type="tel" id="telephone">
+                    <br>
+                    <label for="address">Address:
+                    </label>
+                    <textarea id="address" name="address" rows="3" cols="60" name="feedback" placeholder="  Please enter your address"></textarea>
+                    <br>
+                    <label for="emailCbox">Method to contact you:
+                    </label>
+                    <input type="checkbox" id="emailCbox" name="emailCbox" value="emails">Email
+                    <input type="checkbox" id="whatsAppCbox" name="whatsAppCbox" value="Telegram">Whatsapp
+                    <input type="checkbox" id="InappchatCbox" name="InappchatCbox" value="Viber">In-appchat
+                </fieldset><br>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </Form>
+    </body>
+</html>
