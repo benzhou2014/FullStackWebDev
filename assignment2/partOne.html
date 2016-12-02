@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <body onload="do_game()">
+        <h1>This is my naughty home page.</h1>
+        <script>
+            var answerCorrect = false;
+            var targetColor = Math.floor(Math.random() * 9) + 1;
+            var colors = [
+                "blue",
+                "cyan",
+                "gold",
+                "gray",
+                "green",
+                "magenta",
+                "orange",
+                "red",
+                "white",
+                "yellow"
+            ];
+
+            function printColor() {
+                var result = "";
+                for (index = 0; index < colors.length; ++index) {
+                    result = result + colors[index] + " ";
+                }
+                return result;
+            }
+
+            function ask() {
+                var ask,
+                    input;
+                ask = "I am thinging of one of these colors: \n\n";
+                ask = ask + printColor() + "\n\n";
+                ask += "What color am I thinking of?";
+                return ask;
+
+            }
+
+            function do_game() {
+                var counter = 0;
+                alert(colors[targetColor]);
+                while (!answerCorrect) {
+                    counter = counter + 1;
+                    input = prompt(ask());
+                    if (input == colors[targetColor]) {
+                        answerCorrect = true;
+                    } else {
+                        alert(colors[targetColor]);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+</body>
+</html>
+>
+</html>
